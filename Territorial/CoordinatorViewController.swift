@@ -37,7 +37,7 @@ final class CoordinatorViewController: UIViewController {
             return LocationRestrictedInfoViewController()
 
         case .locationNeedsAuth:
-            return LocationAuthorizationRequestViewController()
+            return LocationAuthorizationRequestViewController(geofence)
             
         case .usable:
             return TrackGeofenceViewController()

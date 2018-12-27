@@ -19,6 +19,9 @@
 		A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965921D553920078D1C9 /* CoordinatorTests.swift */; };
 		A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */; };
 		A78B965E21D556390078D1C9 /* LocationRestrictedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */; };
+		A78B966021D55BAE0078D1C9 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */; };
+		A78B966321D566FB0078D1C9 /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B966221D566FB0078D1C9 /* PromptView.swift */; };
+		A78B966521D577650078D1C9 /* HeroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B966421D577650078D1C9 /* HeroButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		A78B965921D553920078D1C9 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceManager.swift; sourceTree = "<group>"; };
 		A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRestrictedInfoViewController.swift; sourceTree = "<group>"; };
+		A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		A78B966221D566FB0078D1C9 /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		A78B966421D577650078D1C9 /* HeroButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		A78B961121D5233D0078D1C9 /* Territorial */ = {
 			isa = PBXGroup;
 			children = (
+				A78B966121D566EC0078D1C9 /* Views */,
 				A78B961221D5233D0078D1C9 /* AppDelegate.swift */,
 				A78B961921D5233E0078D1C9 /* Assets.xcassets */,
 				A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */,
@@ -116,6 +123,7 @@
 				A78B964F21D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift */,
 				A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */,
 				A78B965721D53F180078D1C9 /* TrackGeofenceViewController.swift */,
+				A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */,
 			);
 			path = Territorial;
 			sourceTree = "<group>";
@@ -146,6 +154,15 @@
 				A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		A78B966121D566EC0078D1C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A78B966221D566FB0078D1C9 /* PromptView.swift */,
+				A78B966421D577650078D1C9 /* HeroButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +298,12 @@
 				A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */,
 				A78B965E21D556390078D1C9 /* LocationRestrictedInfoViewController.swift in Sources */,
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
+				A78B966521D577650078D1C9 /* HeroButton.swift in Sources */,
 				A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */,
+				A78B966321D566FB0078D1C9 /* PromptView.swift in Sources */,
 				A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */,
 				A78B965121D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift in Sources */,
+				A78B966021D55BAE0078D1C9 /* StyleGuide.swift in Sources */,
 				A78B965821D53F180078D1C9 /* TrackGeofenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
