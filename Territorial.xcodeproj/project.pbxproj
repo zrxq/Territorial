@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B961221D5233D0078D1C9 /* AppDelegate.swift */; };
-		A78B961521D5233D0078D1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B961421D5233D0078D1C9 /* ViewController.swift */; };
-		A78B961821D5233D0078D1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78B961621D5233D0078D1C9 /* Main.storyboard */; };
 		A78B961A21D5233E0078D1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78B961921D5233E0078D1C9 /* Assets.xcassets */; };
 		A78B961D21D5233E0078D1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */; };
-		A78B962821D5233E0078D1C9 /* TerritorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B962721D5233E0078D1C9 /* TerritorialTests.swift */; };
 		A78B963321D5233E0078D1C9 /* TerritorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */; };
+		A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */; };
+		A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964A21D537530078D1C9 /* GeofenceManager.swift */; };
+		A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */; };
+		A78B965121D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964F21D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift */; };
+		A78B965821D53F180078D1C9 /* TrackGeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965721D53F180078D1C9 /* TrackGeofenceViewController.swift */; };
+		A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965921D553920078D1C9 /* CoordinatorTests.swift */; };
+		A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */; };
+		A78B965E21D556390078D1C9 /* LocationRestrictedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +41,22 @@
 /* Begin PBXFileReference section */
 		A78B960F21D5233D0078D1C9 /* Territorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Territorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78B961221D5233D0078D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A78B961421D5233D0078D1C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A78B961721D5233D0078D1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A78B961921D5233E0078D1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A78B961C21D5233E0078D1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A78B961E21D5233E0078D1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A78B962321D5233E0078D1C9 /* TerritorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TerritorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A78B962721D5233E0078D1C9 /* TerritorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerritorialTests.swift; sourceTree = "<group>"; };
 		A78B962921D5233E0078D1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A78B962E21D5233E0078D1C9 /* TerritorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TerritorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerritorialUITests.swift; sourceTree = "<group>"; };
 		A78B963421D5233E0078D1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
+		A78B964A21D537530078D1C9 /* GeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceManager.swift; sourceTree = "<group>"; };
+		A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationGeofenceManager.swift; sourceTree = "<group>"; };
+		A78B964F21D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationRequestViewController.swift; sourceTree = "<group>"; };
+		A78B965721D53F180078D1C9 /* TrackGeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackGeofenceViewController.swift; sourceTree = "<group>"; };
+		A78B965921D553920078D1C9 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceManager.swift; sourceTree = "<group>"; };
+		A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRestrictedInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +108,14 @@
 			isa = PBXGroup;
 			children = (
 				A78B961221D5233D0078D1C9 /* AppDelegate.swift */,
-				A78B961421D5233D0078D1C9 /* ViewController.swift */,
-				A78B961621D5233D0078D1C9 /* Main.storyboard */,
 				A78B961921D5233E0078D1C9 /* Assets.xcassets */,
-				A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */,
+				A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */,
 				A78B961E21D5233E0078D1C9 /* Info.plist */,
+				A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */,
+				A78B964C21D538510078D1C9 /* Location */,
+				A78B964F21D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift */,
+				A78B965D21D556390078D1C9 /* LocationRestrictedInfoViewController.swift */,
+				A78B965721D53F180078D1C9 /* TrackGeofenceViewController.swift */,
 			);
 			path = Territorial;
 			sourceTree = "<group>";
@@ -110,8 +123,9 @@
 		A78B962621D5233E0078D1C9 /* TerritorialTests */ = {
 			isa = PBXGroup;
 			children = (
-				A78B962721D5233E0078D1C9 /* TerritorialTests.swift */,
 				A78B962921D5233E0078D1C9 /* Info.plist */,
+				A78B965921D553920078D1C9 /* CoordinatorTests.swift */,
+				A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */,
 			);
 			path = TerritorialTests;
 			sourceTree = "<group>";
@@ -123,6 +137,15 @@
 				A78B963421D5233E0078D1C9 /* Info.plist */,
 			);
 			path = TerritorialUITests;
+			sourceTree = "<group>";
+		};
+		A78B964C21D538510078D1C9 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A78B964A21D537530078D1C9 /* GeofenceManager.swift */,
+				A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +254,6 @@
 			files = (
 				A78B961D21D5233E0078D1C9 /* LaunchScreen.storyboard in Resources */,
 				A78B961A21D5233E0078D1C9 /* Assets.xcassets in Resources */,
-				A78B961821D5233D0078D1C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78B961521D5233D0078D1C9 /* ViewController.swift in Sources */,
+				A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */,
+				A78B965E21D556390078D1C9 /* LocationRestrictedInfoViewController.swift in Sources */,
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
+				A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */,
+				A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */,
+				A78B965121D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift in Sources */,
+				A78B965821D53F180078D1C9 /* TrackGeofenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78B962821D5233E0078D1C9 /* TerritorialTests.swift in Sources */,
+				A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */,
+				A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A78B961621D5233D0078D1C9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A78B961721D5233D0078D1C9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR6V5VNL3G;
 				INFOPLIST_FILE = Territorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR6V5VNL3G;
 				INFOPLIST_FILE = Territorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
