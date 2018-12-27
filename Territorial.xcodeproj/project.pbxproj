@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A76418DA21D58BE500A553F5 /* ScriptedGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418D821D58BE100A553F5 /* ScriptedGeofenceManager.swift */; };
 		A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B961221D5233D0078D1C9 /* AppDelegate.swift */; };
 		A78B961A21D5233E0078D1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78B961921D5233E0078D1C9 /* Assets.xcassets */; };
 		A78B961D21D5233E0078D1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A76418D821D58BE100A553F5 /* ScriptedGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptedGeofenceManager.swift; sourceTree = "<group>"; };
 		A78B960F21D5233D0078D1C9 /* Territorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Territorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78B961221D5233D0078D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78B961921D5233E0078D1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,8 +143,9 @@
 		A78B963121D5233E0078D1C9 /* TerritorialUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */,
 				A78B963421D5233E0078D1C9 /* Info.plist */,
+				A76418D821D58BE100A553F5 /* ScriptedGeofenceManager.swift */,
+				A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */,
 			);
 			path = TerritorialUITests;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
 				A78B966521D577650078D1C9 /* HeroButton.swift in Sources */,
 				A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */,
+				A76418DA21D58BE500A553F5 /* ScriptedGeofenceManager.swift in Sources */,
 				A78B966321D566FB0078D1C9 /* PromptView.swift in Sources */,
 				A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */,
 				A78B965121D53DCB0078D1C9 /* LocationAuthorizationRequestViewController.swift in Sources */,

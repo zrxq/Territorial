@@ -13,15 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let geofence = CoreLocationGeofenceManager()
+        let geofence: GeofenceManager
+        
+        if CommandLine.arguments.contains("--uitest") {
+            geofence = ScriptedGeofenceManager()
+        } else {
+            geofence = CoreLocationGeofenceManager()
+        }
+        
         let coordinator = CoordinatorViewController(geofence)
         
         window = UIWindow()
         window?.rootViewController = coordinator
-        
         window?.makeKeyAndVisible()
         
         return true
