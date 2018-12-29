@@ -15,7 +15,6 @@ class DistanceFieldController: UIViewController {
     var maxValue: Double?
     
     typealias Handler = (Double?) -> ()
-    
     var onChange: Handler?
     
     var value: Double? {
@@ -35,17 +34,6 @@ class DistanceFieldController: UIViewController {
         }
     }
     
-    lazy var formatter: NumberFormatter = {
-        let f = NumberFormatter()
-        f.maximumFractionDigits = 0
-        f.usesGroupingSeparator = false
-        return f
-    }()
-    
-    override func loadView() {
-        assertionFailure("\(type(of: self)) requires .textField/.view to be set before use.")
-    }
-    
     var textField: UITextField! {
         get {
             return view as! UITextField?
@@ -56,6 +44,17 @@ class DistanceFieldController: UIViewController {
             assert(newValue.delegate == nil)
             newValue.delegate = self
         }
+    }
+    
+    private lazy var formatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.maximumFractionDigits = 0
+        f.usesGroupingSeparator = false
+        return f
+    }()
+    
+    override func loadView() {
+        assertionFailure("\(type(of: self)) requires .textField/.view to be set before use.")
     }
     
     private func clamp(_ value: Double?) -> Double? {

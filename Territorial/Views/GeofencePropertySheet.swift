@@ -23,7 +23,7 @@ class GeofencePropertySheet: UIView {
         
         let margins = self.layoutMarginsGuide
         
-        radiusLabel.text = NSLocalizedString("Radius:", comment: "Geofence editor radius field label.")
+        radiusLabel.text = NSLocalizedString("Radius ", comment: "Geofence editor radius field label.")
         radiusLabel.textColor = .fieldLabel
         radiusLabel.font = .formLabel
         radiusLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -45,13 +45,14 @@ class GeofencePropertySheet: UIView {
         radiusUnitLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(radiusUnitLabel)
         
-        ssidLabel.text = NSLocalizedString("WiFi:", comment: "Geofence editor Wi-Fi SSID field label.")
+        ssidLabel.text = NSLocalizedString("Wi-Fi ", comment: "Geofence editor Wi-Fi SSID field label.")
         ssidLabel.textColor = .fieldLabel
         ssidLabel.font = .formLabel
         ssidLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(ssidLabel)
 
-        ssidField.placeholder = NSLocalizedString("My Wi-Fi Hotspot", comment: "Geofence editor Wi-Fi SSID field placeholder.")
+        ssidField.placeholder = NSLocalizedString("Wi-Fi SSID", comment: "Geofence editor Wi-Fi SSID field placeholder.")
+        ssidField.enablesReturnKeyAutomatically = true
         ssidField.translatesAutoresizingMaskIntoConstraints = false
         ssidField.setContentHuggingPriority(.init(100), for: .horizontal)
         addSubview(ssidField)

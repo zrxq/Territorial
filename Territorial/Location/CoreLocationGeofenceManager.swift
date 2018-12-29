@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import SystemConfiguration.CaptiveNetwork
 
 let MinimumGeofenceRadius = CLLocationDistance(50)
 
@@ -19,12 +20,13 @@ class CoreLocationGeofenceManager: NSObject, GeofenceManager {
     }
     
     private let locationManager = CLLocationManager()
-    
+    private let wifiMonitor = WirelessMonitor()
     private var lastLoc: CLLocation?
     
     override init() {
         super.init()
         locationManager.delegate = self
+        wifiMonitor.delegate = self
     }
     
     func requestAuthorization() {
@@ -33,10 +35,12 @@ class CoreLocationGeofenceManager: NSObject, GeofenceManager {
     
     func startTracking() {
         locationManager.startUpdatingLocation()
+        wifiMonitor.startMonitoring()
     }
     
     func stopTracking() {
         locationManager.stopUpdatingLocation()
+        wifiMonitor.stopMonitoring()
     }
     
     func defaultGeofence() -> Geofence {
@@ -47,7 +51,7 @@ class CoreLocationGeofenceManager: NSObject, GeofenceManager {
             // actual location not yet available, make up one
             loc = CLLocation(latitude: 37.331860673139786, longitude: -122.02959426386774)
         }
-        return Geofence(center: loc.coordinate, radius: CLLocationDistance(100), ssid: "=^_^=")
+        return Geofence(center: loc.coordinate, radius: CLLocationDistance(100), ssid: WirelessMonitor.ssid ?? "My Hotspot")
     }
 }
 
@@ -70,5 +74,10 @@ extension CoreLocationGeofenceManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         fatalError("Error: \(error)")
     }
-    
+}
+
+extension CoreLocationGeofenceManager: WirelessMonitorDelegate {
+    func wirelessMonitor(_ monitor: WirelessMonitor, didObserveSSIDChange ssid: String?) {
+        print("WiFi did change to \(ssid ?? "none")")
+    }
 }

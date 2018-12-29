@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
+        
         let geofenceManager: GeofenceManager
         let geofenceStore: GeofenceStore
         

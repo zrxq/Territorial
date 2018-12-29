@@ -65,7 +65,7 @@ final class GeofenceEditorViewController: UIViewController {
     }
     
     @objc func done() {
-        geofence.ssid = propertyEditor.ssid
+        geofence.ssid = propertyEditor.ssid ?? ""
         delegate?.geofenceEditor(self, didEndEditingGeofence: geofence.geofence())
     }
     

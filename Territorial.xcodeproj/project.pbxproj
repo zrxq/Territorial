@@ -16,6 +16,9 @@
 		A76418E921D679AA00A553F5 /* GeofencePropertySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */; };
 		A76418EB21D6875E00A553F5 /* GeofencePropertySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */; };
 		A76418ED21D68E7500A553F5 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418EC21D68E7500A553F5 /* InputField.swift */; };
+		A7814C8A21D8158300FB6E4C /* WirelessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8921D8158300FB6E4C /* WirelessMonitor.m */; };
+		A7814C8C21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */; };
+		A7814C8E21D824EE00FB6E4C /* WiFiOverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */; };
 		A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B961221D5233D0078D1C9 /* AppDelegate.swift */; };
 		A78B961A21D5233E0078D1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78B961921D5233E0078D1C9 /* Assets.xcassets */; };
 		A78B961D21D5233E0078D1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */; };
@@ -38,6 +41,7 @@
 		A79BBDE321D7C772001DAE9D /* EmptyStatePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBDE221D7C772001DAE9D /* EmptyStatePrompt.swift */; };
 		A79BBDE521D7D641001DAE9D /* DefaultsGeofenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */; };
 		A79BBDE921D7D744001DAE9D /* MockGeofenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBDE621D7D696001DAE9D /* MockGeofenceStore.swift */; };
+		A79BBE2921D7F5DE001DAE9D /* WirelessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,11 @@
 		A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencePropertySheetController.swift; sourceTree = "<group>"; };
 		A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencePropertySheet.swift; sourceTree = "<group>"; };
 		A76418EC21D68E7500A553F5 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Territorial-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7814C8821D8158300FB6E4C /* WirelessMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WirelessMonitor.h; sourceTree = "<group>"; };
+		A7814C8921D8158300FB6E4C /* WirelessMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WirelessMonitor.m; sourceTree = "<group>"; };
+		A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDFieldControllerViewController.swift; sourceTree = "<group>"; };
+		A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiOverlayButton.swift; sourceTree = "<group>"; };
 		A78B960F21D5233D0078D1C9 /* Territorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Territorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78B961221D5233D0078D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78B961921D5233E0078D1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +104,8 @@
 		A79BBDE221D7C772001DAE9D /* EmptyStatePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatePrompt.swift; sourceTree = "<group>"; };
 		A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsGeofenceStore.swift; sourceTree = "<group>"; };
 		A79BBDE621D7D696001DAE9D /* MockGeofenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceStore.swift; sourceTree = "<group>"; };
+		A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessMonitor.swift; sourceTree = "<group>"; };
+		A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Territorial.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +141,9 @@
 				A76418E621D6706500A553F5 /* GeofenceEditorViewController.swift */,
 				A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */,
 				A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */,
-				A79BBDC221D6F96A001DAE9D /* UIViewController+Util.swift */,
 				A79BBDC721D7B6AA001DAE9D /* PromptViewController.swift */,
+				A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */,
+				A79BBDC221D6F96A001DAE9D /* UIViewController+Util.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +155,7 @@
 				A78B962621D5233E0078D1C9 /* TerritorialTests */,
 				A78B963121D5233E0078D1C9 /* TerritorialUITests */,
 				A78B961021D5233D0078D1C9 /* Products */,
+				A79BBE2A21D7FF6C001DAE9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +172,7 @@
 		A78B961121D5233D0078D1C9 /* Territorial */ = {
 			isa = PBXGroup;
 			children = (
+				A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */,
 				A79BBDC421D7B5BA001DAE9D /* Prompts */,
 				A76418E121D64C8A00A553F5 /* ViewControllers */,
 				A78B966121D566EC0078D1C9 /* Views */,
@@ -166,6 +180,7 @@
 				A78B961921D5233E0078D1C9 /* Assets.xcassets */,
 				A78B961E21D5233E0078D1C9 /* Info.plist */,
 				A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */,
+				A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */,
 				A78B964C21D538510078D1C9 /* Location */,
 				A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */,
 			);
@@ -203,6 +218,9 @@
 				A76418DF21D6451100A553F5 /* GeofenceStore.swift */,
 				A76418E421D664CE00A553F5 /* Geofence+MKAnnotation.swift */,
 				A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */,
+				A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */,
+				A7814C8821D8158300FB6E4C /* WirelessMonitor.h */,
+				A7814C8921D8158300FB6E4C /* WirelessMonitor.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -214,6 +232,7 @@
 				A78B966421D577650078D1C9 /* HeroButton.swift */,
 				A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */,
 				A76418EC21D68E7500A553F5 /* InputField.swift */,
+				A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +246,13 @@
 				A79BBDC521D7B5CA001DAE9D /* Prompt.swift */,
 			);
 			path = Prompts;
+			sourceTree = "<group>";
+		};
+		A79BBE2A21D7FF6C001DAE9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +323,15 @@
 				TargetAttributes = {
 					A78B960E21D5233D0078D1C9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					A78B962221D5233E0078D1C9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -364,9 +399,13 @@
 				A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */,
 				A79BBDC621D7B5CA001DAE9D /* Prompt.swift in Sources */,
 				A79BBDE521D7D641001DAE9D /* DefaultsGeofenceStore.swift in Sources */,
+				A79BBE2921D7F5DE001DAE9D /* WirelessMonitor.swift in Sources */,
+				A7814C8A21D8158300FB6E4C /* WirelessMonitor.m in Sources */,
 				A79BBDC121D6F7C7001DAE9D /* DistanceFieldController.swift in Sources */,
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
+				A7814C8E21D824EE00FB6E4C /* WiFiOverlayButton.swift in Sources */,
 				A78B966521D577650078D1C9 /* HeroButton.swift in Sources */,
+				A7814C8C21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift in Sources */,
 				A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */,
 				A76418DE21D6430F00A553F5 /* CLLocationCoordinate2D+Utils.swift in Sources */,
 				A76418ED21D68E7500A553F5 /* InputField.swift in Sources */,
@@ -552,16 +591,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Territorial/Territorial.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = Territorial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zrslv.Territorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoreslav.Territorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Territorial/Territorial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -571,16 +616,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Territorial/Territorial.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = Territorial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zrslv.Territorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoreslav.Territorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Territorial/Territorial-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -592,7 +642,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = TerritorialTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,7 +663,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = TerritorialTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,7 +683,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = TerritorialUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -653,7 +703,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6V5VNL3G;
+				DEVELOPMENT_TEAM = 3JFF47CZJ4;
 				INFOPLIST_FILE = TerritorialUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

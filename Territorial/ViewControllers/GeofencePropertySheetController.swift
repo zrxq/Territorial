@@ -18,18 +18,13 @@ class GeofencePropertySheetController: UIViewController {
     weak var delegate: GeofencePropertySheetControllerDelegate?
     
     var radius: CLLocationDistance
-    var ssid: String {
-        return sheet.ssidField.text ?? ""
-    }
+    var ssid: String?
     
     private var sheet: GeofencePropertySheet!
-    private var initialRadius: CLLocationDistance
-    private var initialSSID: String
     
     init(radius: CLLocationDistance, ssid: String) {
-        initialRadius = radius
-        self.radius = initialRadius
-        initialSSID = ssid
+        self.radius = radius
+        self.ssid = ssid
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,19 +45,25 @@ class GeofencePropertySheetController: UIViewController {
     }
     
     override func viewDidLoad() {        
-        sheet.ssidField.text = initialSSID
-        sheet.ssidField.delegate = self
         
         let distanceController = DistanceFieldController()
         distanceController.textField = sheet.radiusField
         distanceController.minValue = MinimumGeofenceRadius
-        distanceController.value = initialRadius
+        distanceController.value = radius
         distanceController.onChange = { [unowned self] radius in
             if let radius = radius {
                 self.update(radius: radius)
             }
         }
         install(distanceController)
+        
+        let ssidController = SSIDFieldControllerViewController()
+        ssidController.textField = sheet.ssidField
+        ssidController.value = ssid
+        ssidController.onChange = { [unowned self] ssid in
+            self.ssid = ssid
+        }
+        install(ssidController)
 
         let cancellingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         sheet.addGestureRecognizer(cancellingTapRecognizer)
@@ -80,12 +81,5 @@ class GeofencePropertySheetController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Not supported.")
-    }
-}
-
-extension GeofencePropertySheetController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
