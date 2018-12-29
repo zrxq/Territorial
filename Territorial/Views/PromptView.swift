@@ -19,7 +19,7 @@ final class PromptView: UIView {
         backgroundColor = .background
         layoutMargins = UIEdgeInsets.margins
         
-        let guide = layoutMarginsGuide
+        let margins = layoutMarginsGuide
         
         // picture
         
@@ -31,13 +31,13 @@ final class PromptView: UIView {
         picture.translatesAutoresizingMaskIntoConstraints = false
         picture.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
-            picture.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            leftPictureSpacer.leftAnchor.constraint(equalTo: guide.leftAnchor),
+            picture.centerXAnchor.constraint(equalTo: margins.centerXAnchor),
+            leftPictureSpacer.leftAnchor.constraint(equalTo: margins.leftAnchor),
             leftPictureSpacer.rightAnchor.constraint(equalTo: picture.leftAnchor),
             leftPictureSpacer.heightAnchor.constraint(equalTo: leftPictureSpacer.widthAnchor, multiplier: 1.0),
             topPictureSpacer.heightAnchor.constraint(equalTo: leftPictureSpacer.heightAnchor, multiplier: 1.0),
             topPictureSpacer.widthAnchor.constraint(equalTo: topPictureSpacer.heightAnchor, multiplier: 1.0),
-            topPictureSpacer.topAnchor.constraint(equalTo: guide.topAnchor),
+            topPictureSpacer.topAnchor.constraint(equalTo: margins.topAnchor),
             picture.topAnchor.constraint(equalTo: topPictureSpacer.bottomAnchor),
             ])
         
@@ -46,9 +46,9 @@ final class PromptView: UIView {
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            button.leftAnchor.constraint(equalTo: guide.leftAnchor),
-            button.rightAnchor.constraint(equalTo: guide.rightAnchor),
-            button.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            button.leftAnchor.constraint(equalTo: margins.leftAnchor),
+            button.rightAnchor.constraint(equalTo: margins.rightAnchor),
+            button.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
             ])
         
         // message label
@@ -62,8 +62,8 @@ final class PromptView: UIView {
         message.numberOfLines = 0
         message.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            message.leftAnchor.constraint(equalTo: guide.leftAnchor),
-            message.rightAnchor.constraint(equalTo: guide.rightAnchor),
+            message.leftAnchor.constraint(equalTo: margins.leftAnchor),
+            message.rightAnchor.constraint(equalTo: margins.rightAnchor),
             topMessageSpacer.heightAnchor.constraint(equalTo: topPictureSpacer.heightAnchor, multiplier: 1.0),
             topMessageSpacer.topAnchor.constraint(equalTo: picture.bottomAnchor),
             message.topAnchor.constraint(equalTo: topMessageSpacer.bottomAnchor),

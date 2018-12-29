@@ -17,4 +17,7 @@ protocol GeofenceManager: AnyObject {
     var delegate: GeofenceManagerDelegate? { get set }
     
     func requestAuthorization()
+    func startTracking()
+    func stopTracking()
+    func defaultGeofence() -> Geofence
 }

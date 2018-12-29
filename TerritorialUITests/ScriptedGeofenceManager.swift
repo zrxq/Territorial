@@ -12,6 +12,17 @@ import UIKit
 
 class ScriptedGeofenceManager: GeofenceManager {
     
+    func startTracking() {
+    }
+    
+    func stopTracking() {
+    }
+    
+    func defaultGeofence() -> Geofence {
+        return Geofence(center: CLLocationCoordinate2D(latitude: 50.4348, longitude: 30.5168), radius: CLLocationDistance(100), ssid: "=^_^=")
+    }
+    
+    
     var authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet {
             delegate?.geofenceManager(self, didChangeAuthorizationStatus: authorizationStatus)

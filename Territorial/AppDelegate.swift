@@ -15,17 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let geofence: GeofenceManager
-        
-        if CommandLine.arguments.contains("--uitest") {
-            geofence = ScriptedGeofenceManager()
-        } else {
-            geofence = CoreLocationGeofenceManager()
+        if CommandLine.arguments.contains("--noui") {
+            return true
         }
         
-        let coordinator = CoordinatorViewController(geofence)
+        let geofenceManager: GeofenceManager
+        let geofenceStore: GeofenceStore
+        
+        if CommandLine.arguments.contains("--uitest") {
+            geofenceManager = ScriptedGeofenceManager()
+            geofenceStore = MockGeofenceStore()
+        } else {
+            geofenceManager = CoreLocationGeofenceManager()
+            geofenceStore = DefaultsGeofenceStore()
+        }
+        
+        let coordinator = CoordinatorViewController(geofenceManager, store: geofenceStore)
         
         window = UIWindow()
+        window?.tintColor = .active
         window?.rootViewController = coordinator
         window?.makeKeyAndVisible()
         

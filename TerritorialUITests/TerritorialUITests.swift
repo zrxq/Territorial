@@ -11,19 +11,17 @@ import XCTest
 class TerritorialUITests: XCTestCase {
     
     var app: XCUIApplication!
-    
-    let alertExpectation = XCTestExpectation(description: "Location Access alert appeared")
+    let to = TimeInterval(5)
 
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launchArguments.append("--uitest")
-        app.launch()
     }
-    
+
     func testAuthorizationFlow() {
-        let to = TimeInterval(5)
-        
+        app.launch()
+
         // initial state
         app.buttons["Enable Location"].tap()
         let alert = app.alerts.element
@@ -36,9 +34,27 @@ class TerritorialUITests: XCTestCase {
         app.activate()
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: to))
 
-        // granted
-        XCTAssertFalse(app.buttons["Open Settings"].exists)
-        // TODO
+        // granted, empty state
+        XCTAssertTrue(app.buttons["Configure Geofence"].exists)
+    }
+    
+    func testGeofenceEditor() {
+        app.launch()
+        
+        app.buttons["Enable Location"].tap()
+        let alert = app.alerts.element
+        XCTAssertTrue(alert.waitForExistence(timeout: to))
+        alert.buttons["Yep"].tap()
+        
+        app.buttons["Configure Geofence"].tap()
+
+        // test distance input clamping
+        let distanceField = app.textFields["300"]
+        distanceField.tap()
+        app.typeText("10\n")
+        XCTAssertEqual(distanceField.value as? String, "50")
+        
+        app.navigationBars["Geofence Area"].buttons["Done"].tap()
 
     }
 
