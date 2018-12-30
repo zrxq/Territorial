@@ -16,16 +16,20 @@
 		A76418E921D679AA00A553F5 /* GeofencePropertySheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */; };
 		A76418EB21D6875E00A553F5 /* GeofencePropertySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */; };
 		A76418ED21D68E7500A553F5 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76418EC21D68E7500A553F5 /* InputField.swift */; };
-		A7814C8A21D8158300FB6E4C /* WirelessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8921D8158300FB6E4C /* WirelessMonitor.m */; };
-		A7814C8C21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */; };
+		A7814C8A21D8158300FB6E4C /* SystemWirelessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8921D8158300FB6E4C /* SystemWirelessMonitor.m */; };
+		A7814C8C21D8230F00FB6E4C /* SSIDFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8B21D8230F00FB6E4C /* SSIDFieldController.swift */; };
 		A7814C8E21D824EE00FB6E4C /* WiFiOverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */; };
+		A7814C9021D84DED00FB6E4C /* GeofenceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C8F21D84DED00FB6E4C /* GeofenceTracker.swift */; };
+		A7814C9221D856B700FB6E4C /* SystemWirelessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C9121D856B700FB6E4C /* SystemWirelessMonitor.swift */; };
+		A7814C9421D85A4500FB6E4C /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C9321D85A4500FB6E4C /* LocationTracker.swift */; };
+		A7814C9A21D8687100FB6E4C /* MockWirelessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7814C9921D8687100FB6E4C /* MockWirelessMonitor.swift */; };
 		A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B961221D5233D0078D1C9 /* AppDelegate.swift */; };
 		A78B961A21D5233E0078D1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78B961921D5233E0078D1C9 /* Assets.xcassets */; };
 		A78B961D21D5233E0078D1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */; };
 		A78B963321D5233E0078D1C9 /* TerritorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */; };
 		A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */; };
-		A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964A21D537530078D1C9 /* GeofenceManager.swift */; };
-		A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */; };
+		A78B964B21D537530078D1C9 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964A21D537530078D1C9 /* AuthorizationManager.swift */; };
+		A78B964E21D538870078D1C9 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964D21D538870078D1C9 /* CoreLocationTracker.swift */; };
 		A78B965821D53F180078D1C9 /* GeofenceTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */; };
 		A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965921D553920078D1C9 /* CoordinatorTests.swift */; };
 		A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */; };
@@ -42,6 +46,8 @@
 		A79BBDE521D7D641001DAE9D /* DefaultsGeofenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */; };
 		A79BBDE921D7D744001DAE9D /* MockGeofenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBDE621D7D696001DAE9D /* MockGeofenceStore.swift */; };
 		A79BBE2921D7F5DE001DAE9D /* WirelessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */; };
+		A7C1138421D8691400A29D6D /* MockLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138321D8691400A29D6D /* MockLocationTracker.swift */; };
+		A7C1138621D86A8500A29D6D /* GeofenceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138521D86A8500A29D6D /* GeofenceTrackerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,10 +78,14 @@
 		A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencePropertySheet.swift; sourceTree = "<group>"; };
 		A76418EC21D68E7500A553F5 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Territorial-Bridging-Header.h"; sourceTree = "<group>"; };
-		A7814C8821D8158300FB6E4C /* WirelessMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WirelessMonitor.h; sourceTree = "<group>"; };
-		A7814C8921D8158300FB6E4C /* WirelessMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WirelessMonitor.m; sourceTree = "<group>"; };
-		A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDFieldControllerViewController.swift; sourceTree = "<group>"; };
+		A7814C8821D8158300FB6E4C /* SystemWirelessMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemWirelessMonitor.h; sourceTree = "<group>"; };
+		A7814C8921D8158300FB6E4C /* SystemWirelessMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemWirelessMonitor.m; sourceTree = "<group>"; };
+		A7814C8B21D8230F00FB6E4C /* SSIDFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDFieldController.swift; sourceTree = "<group>"; };
 		A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiOverlayButton.swift; sourceTree = "<group>"; };
+		A7814C8F21D84DED00FB6E4C /* GeofenceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTracker.swift; sourceTree = "<group>"; };
+		A7814C9121D856B700FB6E4C /* SystemWirelessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemWirelessMonitor.swift; sourceTree = "<group>"; };
+		A7814C9321D85A4500FB6E4C /* LocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTracker.swift; sourceTree = "<group>"; };
+		A7814C9921D8687100FB6E4C /* MockWirelessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWirelessMonitor.swift; sourceTree = "<group>"; };
 		A78B960F21D5233D0078D1C9 /* Territorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Territorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78B961221D5233D0078D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78B961921D5233E0078D1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,8 +97,8 @@
 		A78B963221D5233E0078D1C9 /* TerritorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerritorialUITests.swift; sourceTree = "<group>"; };
 		A78B963421D5233E0078D1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
-		A78B964A21D537530078D1C9 /* GeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceManager.swift; sourceTree = "<group>"; };
-		A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationGeofenceManager.swift; sourceTree = "<group>"; };
+		A78B964A21D537530078D1C9 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		A78B964D21D538870078D1C9 /* CoreLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTracker.swift; sourceTree = "<group>"; };
 		A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTrackerViewController.swift; sourceTree = "<group>"; };
 		A78B965921D553920078D1C9 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceManager.swift; sourceTree = "<group>"; };
@@ -106,6 +116,8 @@
 		A79BBDE621D7D696001DAE9D /* MockGeofenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceStore.swift; sourceTree = "<group>"; };
 		A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WirelessMonitor.swift; sourceTree = "<group>"; };
 		A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Territorial.entitlements; sourceTree = "<group>"; };
+		A7C1138321D8691400A29D6D /* MockLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationTracker.swift; sourceTree = "<group>"; };
+		A7C1138521D86A8500A29D6D /* GeofenceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTrackerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +154,53 @@
 				A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */,
 				A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */,
 				A79BBDC721D7B6AA001DAE9D /* PromptViewController.swift */,
-				A7814C8B21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift */,
+				A7814C8B21D8230F00FB6E4C /* SSIDFieldController.swift */,
 				A79BBDC221D6F96A001DAE9D /* UIViewController+Util.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A7814C9521D85F2E00FB6E4C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A78B964A21D537530078D1C9 /* AuthorizationManager.swift */,
+				A76418DF21D6451100A553F5 /* GeofenceStore.swift */,
+				A7814C8F21D84DED00FB6E4C /* GeofenceTracker.swift */,
+				A7814C9321D85A4500FB6E4C /* LocationTracker.swift */,
+				A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A7814C9621D85F6500FB6E4C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A78B964D21D538870078D1C9 /* CoreLocationTracker.swift */,
+				A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */,
+				A76418DB21D641BD00A553F5 /* Geofence.swift */,
+				A7814C8821D8158300FB6E4C /* SystemWirelessMonitor.h */,
+				A7814C8921D8158300FB6E4C /* SystemWirelessMonitor.m */,
+				A7814C9121D856B700FB6E4C /* SystemWirelessMonitor.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A7814C9721D85F7800FB6E4C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A76418DD21D6430F00A553F5 /* CLLocationCoordinate2D+Utils.swift */,
+				A76418E421D664CE00A553F5 /* Geofence+MKAnnotation.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A7814C9821D8685B00FB6E4C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A7C1138321D8691400A29D6D /* MockLocationTracker.swift */,
+				A7814C9921D8687100FB6E4C /* MockWirelessMonitor.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		A78B960621D5233D0078D1C9 = {
@@ -172,17 +227,14 @@
 		A78B961121D5233D0078D1C9 /* Territorial */ = {
 			isa = PBXGroup;
 			children = (
-				A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */,
+				A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */,
+				A78B961221D5233D0078D1C9 /* AppDelegate.swift */,
+				A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */,
+				A78B964C21D538510078D1C9 /* Geofence Tracking */,
 				A79BBDC421D7B5BA001DAE9D /* Prompts */,
+				A7C1138721D87C4A00A29D6D /* Resources */,
 				A76418E121D64C8A00A553F5 /* ViewControllers */,
 				A78B966121D566EC0078D1C9 /* Views */,
-				A78B961221D5233D0078D1C9 /* AppDelegate.swift */,
-				A78B961921D5233E0078D1C9 /* Assets.xcassets */,
-				A78B961E21D5233E0078D1C9 /* Info.plist */,
-				A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */,
-				A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */,
-				A78B964C21D538510078D1C9 /* Location */,
-				A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */,
 			);
 			path = Territorial;
 			sourceTree = "<group>";
@@ -193,6 +245,7 @@
 				A78B962921D5233E0078D1C9 /* Info.plist */,
 				A78B965921D553920078D1C9 /* CoordinatorTests.swift */,
 				A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */,
+				A7C1138521D86A8500A29D6D /* GeofenceTrackerTests.swift */,
 			);
 			path = TerritorialTests;
 			sourceTree = "<group>";
@@ -208,30 +261,24 @@
 			path = TerritorialUITests;
 			sourceTree = "<group>";
 		};
-		A78B964C21D538510078D1C9 /* Location */ = {
+		A78B964C21D538510078D1C9 /* Geofence Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				A78B964A21D537530078D1C9 /* GeofenceManager.swift */,
-				A78B964D21D538870078D1C9 /* CoreLocationGeofenceManager.swift */,
-				A76418DB21D641BD00A553F5 /* Geofence.swift */,
-				A76418DD21D6430F00A553F5 /* CLLocationCoordinate2D+Utils.swift */,
-				A76418DF21D6451100A553F5 /* GeofenceStore.swift */,
-				A76418E421D664CE00A553F5 /* Geofence+MKAnnotation.swift */,
-				A79BBDE421D7D641001DAE9D /* DefaultsGeofenceStore.swift */,
-				A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */,
-				A7814C8821D8158300FB6E4C /* WirelessMonitor.h */,
-				A7814C8921D8158300FB6E4C /* WirelessMonitor.m */,
+				A7814C9621D85F6500FB6E4C /* Classes */,
+				A7814C9821D8685B00FB6E4C /* Mock */,
+				A7814C9521D85F2E00FB6E4C /* Protocols */,
+				A7814C9721D85F7800FB6E4C /* Util */,
 			);
-			path = Location;
+			path = "Geofence Tracking";
 			sourceTree = "<group>";
 		};
 		A78B966121D566EC0078D1C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A78B966221D566FB0078D1C9 /* PromptView.swift */,
-				A78B966421D577650078D1C9 /* HeroButton.swift */,
 				A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */,
+				A78B966421D577650078D1C9 /* HeroButton.swift */,
 				A76418EC21D68E7500A553F5 /* InputField.swift */,
+				A78B966221D566FB0078D1C9 /* PromptView.swift */,
 				A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */,
 			);
 			path = Views;
@@ -253,6 +300,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7C1138721D87C4A00A29D6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A78B961921D5233E0078D1C9 /* Assets.xcassets */,
+				A78B961E21D5233E0078D1C9 /* Info.plist */,
+				A78B961B21D5233E0078D1C9 /* LaunchScreen.storyboard */,
+				A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,32 +453,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				A79BBDC321D6F96A001DAE9D /* UIViewController+Util.swift in Sources */,
+				A7C1138421D8691400A29D6D /* MockLocationTracker.swift in Sources */,
 				A76418E521D664CE00A553F5 /* Geofence+MKAnnotation.swift in Sources */,
 				A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */,
 				A79BBDC621D7B5CA001DAE9D /* Prompt.swift in Sources */,
 				A79BBDE521D7D641001DAE9D /* DefaultsGeofenceStore.swift in Sources */,
 				A79BBE2921D7F5DE001DAE9D /* WirelessMonitor.swift in Sources */,
-				A7814C8A21D8158300FB6E4C /* WirelessMonitor.m in Sources */,
+				A7814C8A21D8158300FB6E4C /* SystemWirelessMonitor.m in Sources */,
 				A79BBDC121D6F7C7001DAE9D /* DistanceFieldController.swift in Sources */,
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
 				A7814C8E21D824EE00FB6E4C /* WiFiOverlayButton.swift in Sources */,
 				A78B966521D577650078D1C9 /* HeroButton.swift in Sources */,
-				A7814C8C21D8230F00FB6E4C /* SSIDFieldControllerViewController.swift in Sources */,
-				A78B964B21D537530078D1C9 /* GeofenceManager.swift in Sources */,
+				A7814C8C21D8230F00FB6E4C /* SSIDFieldController.swift in Sources */,
+				A78B964B21D537530078D1C9 /* AuthorizationManager.swift in Sources */,
 				A76418DE21D6430F00A553F5 /* CLLocationCoordinate2D+Utils.swift in Sources */,
 				A76418ED21D68E7500A553F5 /* InputField.swift in Sources */,
 				A79BBDE121D7C5DB001DAE9D /* LocationAccessPrompt.swift in Sources */,
+				A7814C9A21D8687100FB6E4C /* MockWirelessMonitor.swift in Sources */,
 				A76418DA21D58BE500A553F5 /* ScriptedGeofenceManager.swift in Sources */,
+				A7814C9221D856B700FB6E4C /* SystemWirelessMonitor.swift in Sources */,
 				A79BBDE921D7D744001DAE9D /* MockGeofenceStore.swift in Sources */,
 				A76418E021D6451100A553F5 /* GeofenceStore.swift in Sources */,
 				A79BBDCC21D7BBAC001DAE9D /* LocationRestrictedPrompt.swift in Sources */,
 				A78B966321D566FB0078D1C9 /* PromptView.swift in Sources */,
 				A76418EB21D6875E00A553F5 /* GeofencePropertySheet.swift in Sources */,
-				A78B964E21D538870078D1C9 /* CoreLocationGeofenceManager.swift in Sources */,
+				A78B964E21D538870078D1C9 /* CoreLocationTracker.swift in Sources */,
+				A7814C9021D84DED00FB6E4C /* GeofenceTracker.swift in Sources */,
 				A76418DC21D641BD00A553F5 /* Geofence.swift in Sources */,
 				A78B966021D55BAE0078D1C9 /* StyleGuide.swift in Sources */,
 				A79BBDE321D7C772001DAE9D /* EmptyStatePrompt.swift in Sources */,
 				A78B965821D53F180078D1C9 /* GeofenceTrackerViewController.swift in Sources */,
+				A7814C9421D85A4500FB6E4C /* LocationTracker.swift in Sources */,
 				A79BBDC821D7B6AA001DAE9D /* PromptViewController.swift in Sources */,
 				A76418E721D6706500A553F5 /* GeofenceEditorViewController.swift in Sources */,
 				A76418E921D679AA00A553F5 /* GeofencePropertySheetController.swift in Sources */,
@@ -432,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */,
+				A7C1138621D86A8500A29D6D /* GeofenceTrackerTests.swift in Sources */,
 				A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,11 +656,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Territorial/Territorial.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Territorial/Resources/Territorial.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JFF47CZJ4;
-				INFOPLIST_FILE = Territorial/Info.plist;
+				INFOPLIST_FILE = Territorial/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -617,11 +681,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Territorial/Territorial.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Territorial/Resources/Territorial.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JFF47CZJ4;
-				INFOPLIST_FILE = Territorial/Info.plist;
+				INFOPLIST_FILE = Territorial/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

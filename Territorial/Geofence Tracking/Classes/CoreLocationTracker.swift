@@ -1,5 +1,5 @@
 //
-//  CoreLocationGeofenceManager.swift
+//  CoreLocationTracker.swift
 //  Territorial
 //
 //  Created by Zoreslav Khimich on 12/27/18.
@@ -11,36 +11,27 @@ import SystemConfiguration.CaptiveNetwork
 
 let MinimumGeofenceRadius = CLLocationDistance(50)
 
-class CoreLocationGeofenceManager: NSObject, GeofenceManager {
+class CoreLocationTracker: NSObject, AuthorizationManager {
     
-    weak var delegate: GeofenceManagerDelegate?
+    weak var authorizationDelegate: AuthorizationManagerDelegate?
+    weak var delegate: LocationTrackerDelegate?
     
     var authorizationStatus: CLAuthorizationStatus {
         return CLLocationManager.authorizationStatus()
     }
     
     private let locationManager = CLLocationManager()
-    private let wifiMonitor = WirelessMonitor()
     private var lastLoc: CLLocation?
+    
+    var geofence: Geofence?
     
     override init() {
         super.init()
         locationManager.delegate = self
-        wifiMonitor.delegate = self
     }
     
     func requestAuthorization() {
         locationManager.requestWhenInUseAuthorization()
-    }
-    
-    func startTracking() {
-        locationManager.startUpdatingLocation()
-        wifiMonitor.startMonitoring()
-    }
-    
-    func stopTracking() {
-        locationManager.stopUpdatingLocation()
-        wifiMonitor.stopMonitoring()
     }
     
     func defaultGeofence() -> Geofence {
@@ -51,11 +42,11 @@ class CoreLocationGeofenceManager: NSObject, GeofenceManager {
             // actual location not yet available, make up one
             loc = CLLocation(latitude: 37.331860673139786, longitude: -122.02959426386774)
         }
-        return Geofence(center: loc.coordinate, radius: CLLocationDistance(100), ssid: WirelessMonitor.ssid ?? "My Hotspot")
+        return Geofence(center: loc.coordinate, radius: CLLocationDistance(100), ssid: SystemWirelessMonitor.ssid ?? "My Hotspot")
     }
 }
 
-extension CoreLocationGeofenceManager: CLLocationManagerDelegate {
+extension CoreLocationTracker: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             // Request a location update as soon as possible to have
@@ -63,12 +54,13 @@ extension CoreLocationGeofenceManager: CLLocationManagerDelegate {
             // see defaultGeofence()
             locationManager.requestLocation()
         }
-        delegate?.geofenceManager(self, didChangeAuthorizationStatus: status)
+        authorizationDelegate?.authorizationManager(self, didChangeStatus: status)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let loc = locations.last else { return }
         lastLoc = loc
+        delegate?.locationTracker(self, didUpdateLocation: loc)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -76,8 +68,12 @@ extension CoreLocationGeofenceManager: CLLocationManagerDelegate {
     }
 }
 
-extension CoreLocationGeofenceManager: WirelessMonitorDelegate {
-    func wirelessMonitor(_ monitor: WirelessMonitor, didObserveSSIDChange ssid: String?) {
-        print("WiFi did change to \(ssid ?? "none")")
+extension CoreLocationTracker: LocationTracker {
+    func startTracking(_ geofence: Geofence) {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopTracking() {
+        locationManager.stopUpdatingLocation()
     }
 }

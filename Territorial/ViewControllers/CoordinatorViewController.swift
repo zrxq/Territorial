@@ -12,7 +12,7 @@ import CoreLocation
 final class CoordinatorViewController: UIViewController {
     
     enum State {
-        case locationNeedsAuth
+        case needsAuthorization
         case locationRestricted
         case needsConfiguring
         case tracking
@@ -27,7 +27,7 @@ final class CoordinatorViewController: UIViewController {
                 return .needsConfiguring
             }
         case .notDetermined:
-            return .locationNeedsAuth
+            return .needsAuthorization
         case .restricted, .denied:
             return .locationRestricted
         }
@@ -39,37 +39,36 @@ final class CoordinatorViewController: UIViewController {
         case .locationRestricted:
             return PromptViewController(with: LocationRestrictedPrompt())
 
-        case .locationNeedsAuth:
-            return PromptViewController(with: LocationAccessPrompt(manager: geofenceManager))
+        case .needsAuthorization:
+            return PromptViewController(with: LocationAccessPrompt(manager: authManager))
             
         case .needsConfiguring:
             return PromptViewController(with: EmptyStatePrompt(delegate: self))
             
         case .tracking:
-            let tracker = GeofenceTrackerViewController(geofenceManager)
+            let tracker = GeofenceTrackerViewController()
             tracker.delegate = self
             return tracker
-            
             
         }
     }
     
     private(set) var activeViewController: UIViewController?
     private(set) var state: State!
-    private let geofenceManager: GeofenceManager
+    private let authManager: AuthorizationManager
     private let geofenceStore: GeofenceStore
 
-    init(_ geofenceManager: GeofenceManager, store: GeofenceStore) {
-        self.geofenceManager = geofenceManager
+    init(_ geofenceManager: AuthorizationManager, store: GeofenceStore) {
+        self.authManager = geofenceManager
         self.geofenceStore = store
         super.init(nibName: nil, bundle: nil)
         
-        geofenceManager.delegate = self
+        geofenceManager.authorizationDelegate = self
         state = actualState()
     }
     
     private func actualState() -> State  {
-        return state(for: geofenceManager.authorizationStatus)
+        return state(for: authManager.authorizationStatus)
     }
     
     override func viewDidLoad() {
@@ -114,13 +113,13 @@ final class CoordinatorViewController: UIViewController {
     }
 }
 
-extension CoordinatorViewController: GeofenceManagerDelegate {
-    func geofenceManager(_ manager: GeofenceManager, didChangeAuthorizationStatus newStatus: CLAuthorizationStatus) {
+extension CoordinatorViewController: AuthorizationManagerDelegate {
+    func authorizationManager(_ manager: AuthorizationManager, didChangeStatus newStatus: CLAuthorizationStatus) {
         transition(to: state(for: newStatus))
     }
 }
 
-extension CoordinatorViewController: GeofenceTrackerDelegate {
+extension CoordinatorViewController: GeofenceTrackerViewControllerDelegate {
     func geofenceTrackerDidRequestEditor(_ controller: GeofenceTrackerViewController) {
         guard let all = geofenceStore.geofences, let first = all.first else {
             assertionFailure("Tracker should not be visible when there are no geofences defined.")
@@ -143,7 +142,7 @@ extension CoordinatorViewController: GeofenceEditorDelegate {
 
 extension CoordinatorViewController: EmptyStatePromptDelegate {
     func emptyStatePromptDidRequestGeofenceEditor() {
-        let geofence = geofenceManager.defaultGeofence()
+        let geofence = authManager.defaultGeofence()
         present(geofenceEditor(with: geofence), animated: true, completion: nil)
     }
 }

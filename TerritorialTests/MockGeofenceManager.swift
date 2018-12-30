@@ -9,7 +9,7 @@
 import CoreLocation
 @testable import Territorial
 
-class MockGeofenceManager: NSObject, GeofenceManager {
+class MockGeofenceManager: NSObject, AuthorizationManager {
     func startTracking() {
     }
     
@@ -22,11 +22,11 @@ class MockGeofenceManager: NSObject, GeofenceManager {
     
     var authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet {
-            delegate?.geofenceManager(self, didChangeAuthorizationStatus: authorizationStatus)
+            authorizationDelegate?.geofenceManager(self, didChangeAuthorizationStatus: authorizationStatus)
         }
     }
     
-    var delegate: GeofenceManagerDelegate?
+    var authorizationDelegate: AuthorizationManagerDelegate?
     
     func requestAuthorization() {
     }

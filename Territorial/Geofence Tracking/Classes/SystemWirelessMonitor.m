@@ -6,7 +6,7 @@
 //  Copyright © 2018 Slate. All rights reserved.
 //
 
-#import "WirelessMonitor.h"
+#import "SystemWirelessMonitor.h"
 
 CFStringRef const DarwinNetworkChangeNotification = CFSTR(kNotifySCNetworkChange);
 

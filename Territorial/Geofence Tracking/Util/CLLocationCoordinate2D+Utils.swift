@@ -9,6 +9,7 @@
 import CoreLocation
 
 extension CLLocationCoordinate2D: Codable, Equatable {
+    
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         let latitude = try container.decode(Double.self)

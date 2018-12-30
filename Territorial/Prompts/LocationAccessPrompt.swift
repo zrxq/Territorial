@@ -10,8 +10,8 @@ import UIKit
 
 struct LocationAccessPrompt: Prompt {
     
-    private let manager: GeofenceManager
-    init(manager: GeofenceManager) {
+    private let manager: AuthorizationManager
+    init(manager: AuthorizationManager) {
         self.manager = manager
     }
     

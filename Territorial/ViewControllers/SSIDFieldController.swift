@@ -1,5 +1,5 @@
 //
-//  SSIDFieldControllerViewController.swift
+//  SSIDFieldController.swift
 //  Territorial
 //
 //  Created by Zoreslav Khimich on 12/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SSIDFieldControllerViewController: UIViewController {
+class SSIDFieldController: UIViewController {
     
     var value: String? {
         set { textField.text = newValue }
@@ -31,7 +31,7 @@ class SSIDFieldControllerViewController: UIViewController {
             let autofillButton = WiFiOverlayButton(type: .system)
             autofillButton.sizeToFit()
             newValue.rightView = autofillButton
-            newValue.rightViewMode = WirelessMonitor.ssid == nil ? .never : .always
+            newValue.rightViewMode = SystemWirelessMonitor.ssid == nil ? .never : .always
             
             autofillButton.addTarget(self, action: #selector(autofillSSID), for: .touchUpInside)
         }
@@ -41,7 +41,7 @@ class SSIDFieldControllerViewController: UIViewController {
         assertionFailure("\(type(of: self)) requires .textField/.view to be set before use.")
     }
     
-    private let wifi = WirelessMonitor()
+    private let wifi = SystemWirelessMonitor()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,12 +55,12 @@ class SSIDFieldControllerViewController: UIViewController {
     }
     
     @objc func autofillSSID() {
-        value = WirelessMonitor.ssid
+        value = SystemWirelessMonitor.ssid
         onChange?(value)
     }
 }
 
-extension SSIDFieldControllerViewController: UITextFieldDelegate {
+extension SSIDFieldController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, !text.isEmpty else {
             return false
@@ -81,8 +81,8 @@ extension SSIDFieldControllerViewController: UITextFieldDelegate {
     }
 }
 
-extension SSIDFieldControllerViewController: WirelessMonitorDelegate {
-    func wirelessMonitor(_ monitor: WirelessMonitor, didObserveSSIDChange ssid: String?) {
+extension SSIDFieldController: WirelessMonitorDelegate {
+    func wirelessMonitor(_ monitor: WirelessMonitor, didUpdateSSID ssid: String?) {
         textField.rightViewMode = ssid == nil ? .never : .always
     }
 }

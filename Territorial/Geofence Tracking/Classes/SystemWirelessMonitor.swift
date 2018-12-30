@@ -1,19 +1,15 @@
 //
-//  WirelessMonitor.swift
+//  SystemWirelessMonitor.swift
 //  Territorial
 //
-//  Created by Zoreslav Khimich on 12/29/18.
+//  Created by Zoreslav Khimich on 12/30/18.
 //  Copyright © 2018 Slate. All rights reserved.
 //
 
 import Foundation
 import SystemConfiguration.CaptiveNetwork
 
-protocol WirelessMonitorDelegate: AnyObject {
-    func wirelessMonitor(_ monitor: WirelessMonitor, didObserveSSIDChange ssid: String?)
-}
-
-final class WirelessMonitor {
+final class SystemWirelessMonitor: WirelessMonitor {
     
     weak var delegate: WirelessMonitorDelegate?
     
@@ -36,12 +32,13 @@ final class WirelessMonitor {
     }
     
     func startMonitoring() {
-        lastKnownSSID = WirelessMonitor.ssid
+        lastKnownSSID = SystemWirelessMonitor.ssid
         CFNotificationCenterAddObserver(darwinNotifyCenter, opaqueSelf, { (_, observer, _, _, _) in
             guard let observer = observer else { return }
-            let `self` = Unmanaged<WirelessMonitor>.fromOpaque(observer).takeUnretainedValue()
+            let `self` = Unmanaged<SystemWirelessMonitor>.fromOpaque(observer).takeUnretainedValue()
             self.trackNetworkChange()
         }, DarwinNetworkChangeNotification, nil, .coalesce)
+        delegate?.wirelessMonitor(self, didUpdateSSID: lastKnownSSID)
     }
     
     func stopMonitoring() {
@@ -52,11 +49,11 @@ final class WirelessMonitor {
     
     private func trackNetworkChange() {
         assert(Thread.isMainThread)
-        let ssid = WirelessMonitor.ssid
+        let ssid = SystemWirelessMonitor.ssid
         
         if ssid != lastKnownSSID {
-            delegate?.wirelessMonitor(self, didObserveSSIDChange: ssid)
+            delegate?.wirelessMonitor(self, didUpdateSSID: ssid)
             lastKnownSSID = ssid
-        }        
+        }
     }
 }

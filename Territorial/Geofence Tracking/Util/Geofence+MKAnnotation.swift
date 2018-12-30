@@ -9,17 +9,21 @@
 import MapKit
 
 class GeofenceAnnotation: NSObject, MKAnnotation {
+    
     var coordinate: CLLocationCoordinate2D {
         didSet {
             onAreaChanged?(self)
         }
     }
+    
     var radius: CLLocationDistance {
         didSet {
             onAreaChanged?(self)
         }
     }
+    
     var ssid: String
+    
     var title: String? {
         return ssid
     }

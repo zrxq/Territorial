@@ -57,7 +57,7 @@ class GeofencePropertySheetController: UIViewController {
         }
         install(distanceController)
         
-        let ssidController = SSIDFieldControllerViewController()
+        let ssidController = SSIDFieldController()
         ssidController.textField = sheet.ssidField
         ssidController.value = ssid
         ssidController.onChange = { [unowned self] ssid in

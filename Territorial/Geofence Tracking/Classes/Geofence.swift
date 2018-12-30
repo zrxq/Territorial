@@ -22,4 +22,10 @@ struct Geofence: Codable, CustomDebugStringConvertible, Equatable {
     var debugDescription: String {
         return "Geofence \(center.latitude), \(center.longitude) - \(radius), \"\(ssid)\""
     }
+    
+    func contains(_ location: CLLocation) -> Bool {
+        let centerLocation = CLLocation(latitude: center.latitude, longitude: center.longitude)
+        return location.distance(from: centerLocation) <= radius
+    }
+
 }

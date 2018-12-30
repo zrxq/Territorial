@@ -19,19 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
-        
-        let geofenceManager: GeofenceManager
+        let authManager: AuthorizationManager
         let geofenceStore: GeofenceStore
         
         if CommandLine.arguments.contains("--uitest") {
-            geofenceManager = ScriptedGeofenceManager()
+            authManager = ScriptedGeofenceManager()
             geofenceStore = MockGeofenceStore()
         } else {
-            geofenceManager = CoreLocationGeofenceManager()
+            authManager = CoreLocationTracker()
             geofenceStore = DefaultsGeofenceStore()
         }
         
-        let coordinator = CoordinatorViewController(geofenceManager, store: geofenceStore)
+        let coordinator = CoordinatorViewController(authManager, store: geofenceStore)
         
         window = UIWindow()
         window?.tintColor = .active

@@ -8,19 +8,17 @@
 
 import UIKit
 
-protocol GeofenceTrackerDelegate: AnyObject {
+protocol GeofenceTrackerViewControllerDelegate: AnyObject {
     func geofenceTrackerDidRequestEditor(_ controller:GeofenceTrackerViewController)
 }
 
 final class GeofenceTrackerViewController: UIViewController {
     
-    weak var delegate: GeofenceTrackerDelegate?
+    weak var delegate: GeofenceTrackerViewControllerDelegate?
     
-    private let geofenceManager: GeofenceManager
     private var geofence: Geofence?
     
-    init(_ geofenceManager: GeofenceManager) {
-        self.geofenceManager = geofenceManager
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -37,12 +35,10 @@ final class GeofenceTrackerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        geofenceManager.startTracking()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        geofenceManager.stopTracking()
     }
     
     @objc private func editGeofence() {

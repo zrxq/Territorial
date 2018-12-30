@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class ScriptedGeofenceManager: GeofenceManager {
+class ScriptedGeofenceManager: AuthorizationManager {
     
     func startTracking() {
     }
@@ -25,11 +25,11 @@ class ScriptedGeofenceManager: GeofenceManager {
     
     var authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet {
-            delegate?.geofenceManager(self, didChangeAuthorizationStatus: authorizationStatus)
+            authorizationDelegate?.authorizationManager(self, didChangeStatus: authorizationStatus)
         }
     }
     
-    var delegate: GeofenceManagerDelegate?
+    var authorizationDelegate: AuthorizationManagerDelegate?
     
     var viewController: UIViewController {
         return UIApplication.shared.delegate!.window!!.rootViewController!
