@@ -21,7 +21,7 @@ final class CoordinatorViewController: UIViewController {
     fileprivate func state(for locationStatus: CLAuthorizationStatus) -> State {
         switch locationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
-            if geofenceStore.geofences?.first != nil {
+            if store.geofences?.first != nil {
                 return .tracking
             } else {
                 return .needsConfiguring
@@ -46,9 +46,10 @@ final class CoordinatorViewController: UIViewController {
             return PromptViewController(with: EmptyStatePrompt(delegate: self))
             
         case .tracking:
-            let tracker = GeofenceTrackerViewController()
-            tracker.delegate = self
-            return tracker
+            let trackerViewController = TrackingViewController(GeofenceTracker(locationTracker: tracker, wirelessMonitor: wireless))
+            trackerViewController.delegate = self
+            trackerViewController.geofence = store.geofences?.first
+            return trackerViewController
             
         }
     }
@@ -56,15 +57,18 @@ final class CoordinatorViewController: UIViewController {
     private(set) var activeViewController: UIViewController?
     private(set) var state: State!
     private let authManager: AuthorizationManager
-    private let geofenceStore: GeofenceStore
+    private let store: GeofenceStore
+    private let tracker: LocationTracker
+    private let wireless: WirelessMonitor
 
-    init(_ geofenceManager: AuthorizationManager, store: GeofenceStore) {
-        self.authManager = geofenceManager
-        self.geofenceStore = store
+    init(_ authManager: AuthorizationManager, tracker: LocationTracker, wireless: WirelessMonitor, store: GeofenceStore) {
+        self.authManager = authManager
+        self.store = store
+        self.tracker = tracker
+        self.wireless = wireless
         super.init(nibName: nil, bundle: nil)
         
-        geofenceManager.authorizationDelegate = self
-        state = actualState()
+        authManager.authorizationDelegate = self
     }
     
     private func actualState() -> State  {
@@ -73,7 +77,6 @@ final class CoordinatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transition(to: state)
     }
     
     override var childForStatusBarStyle: UIViewController? {
@@ -85,6 +88,7 @@ final class CoordinatorViewController: UIViewController {
     }
     
     fileprivate func transition(to state: State) {
+        guard state != self.state else { return }
         activeViewController?.willMove(toParent: nil)
         activeViewController?.removeFromParent()
         activeViewController?.view.removeFromSuperview()
@@ -119,24 +123,24 @@ extension CoordinatorViewController: AuthorizationManagerDelegate {
     }
 }
 
-extension CoordinatorViewController: GeofenceTrackerViewControllerDelegate {
-    func geofenceTrackerDidRequestEditor(_ controller: GeofenceTrackerViewController) {
-        guard let all = geofenceStore.geofences, let first = all.first else {
+extension CoordinatorViewController: TrackingViewControllerDelegate {
+    func geofenceTrackerDidRequestEditor(_ controller: TrackingViewController) {
+        guard let all = store.geofences, let first = all.first else {
             assertionFailure("Tracker should not be visible when there are no geofences defined.")
             return
         }
         present(geofenceEditor(with: first), animated: true, completion: nil)
-    }
-    
-    func geofenceTracker(_ controller: GeofenceTrackerViewController, didRequestEditorForGeofence geofence: Geofence) {
     }
 }
 
 extension CoordinatorViewController: GeofenceEditorDelegate {
     func geofenceEditor(_ editor: GeofenceEditorViewController, didEndEditingGeofence geofence: Geofence) {
         editor.dismiss(animated: true, completion: nil)
-        geofenceStore.set(geofence: geofence, forIndex: 0)
+        store.set(geofence: geofence, forIndex: 0)
         transition(to: actualState())
+        if let trackerController = activeViewController as? TrackingViewController {
+            trackerController.geofence = geofence
+        }
     }
 }
 

@@ -30,7 +30,7 @@
 		A78B964821D5352D0078D1C9 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */; };
 		A78B964B21D537530078D1C9 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964A21D537530078D1C9 /* AuthorizationManager.swift */; };
 		A78B964E21D538870078D1C9 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B964D21D538870078D1C9 /* CoreLocationTracker.swift */; };
-		A78B965821D53F180078D1C9 /* GeofenceTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */; };
+		A78B965821D53F180078D1C9 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965721D53F180078D1C9 /* TrackingViewController.swift */; };
 		A78B965A21D553920078D1C9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965921D553920078D1C9 /* CoordinatorTests.swift */; };
 		A78B965C21D553CA0078D1C9 /* MockGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */; };
 		A78B966021D55BAE0078D1C9 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */; };
@@ -48,6 +48,8 @@
 		A79BBE2921D7F5DE001DAE9D /* WirelessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79BBE2821D7F5DE001DAE9D /* WirelessMonitor.swift */; };
 		A7C1138421D8691400A29D6D /* MockLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138321D8691400A29D6D /* MockLocationTracker.swift */; };
 		A7C1138621D86A8500A29D6D /* GeofenceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138521D86A8500A29D6D /* GeofenceTrackerTests.swift */; };
+		A7C1138C21D92B9700A29D6D /* SmallRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138B21D92B9700A29D6D /* SmallRoundedButton.swift */; };
+		A7C1138E21D9976B00A29D6D /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1138D21D9976A00A29D6D /* TrackingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +101,7 @@
 		A78B964621D5352D0078D1C9 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
 		A78B964A21D537530078D1C9 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		A78B964D21D538870078D1C9 /* CoreLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTracker.swift; sourceTree = "<group>"; };
-		A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTrackerViewController.swift; sourceTree = "<group>"; };
+		A78B965721D53F180078D1C9 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		A78B965921D553920078D1C9 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		A78B965B21D553CA0078D1C9 /* MockGeofenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeofenceManager.swift; sourceTree = "<group>"; };
 		A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
@@ -118,6 +120,8 @@
 		A79BBE2D21D7FF6C001DAE9D /* Territorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Territorial.entitlements; sourceTree = "<group>"; };
 		A7C1138321D8691400A29D6D /* MockLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationTracker.swift; sourceTree = "<group>"; };
 		A7C1138521D86A8500A29D6D /* GeofenceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTrackerTests.swift; sourceTree = "<group>"; };
+		A7C1138B21D92B9700A29D6D /* SmallRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRoundedButton.swift; sourceTree = "<group>"; };
+		A7C1138D21D9976A00A29D6D /* TrackingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +156,7 @@
 				A79BBDC021D6F7C7001DAE9D /* DistanceFieldController.swift */,
 				A76418E621D6706500A553F5 /* GeofenceEditorViewController.swift */,
 				A76418E821D679AA00A553F5 /* GeofencePropertySheetController.swift */,
-				A78B965721D53F180078D1C9 /* GeofenceTrackerViewController.swift */,
+				A78B965721D53F180078D1C9 /* TrackingViewController.swift */,
 				A79BBDC721D7B6AA001DAE9D /* PromptViewController.swift */,
 				A7814C8B21D8230F00FB6E4C /* SSIDFieldController.swift */,
 				A79BBDC221D6F96A001DAE9D /* UIViewController+Util.swift */,
@@ -230,7 +234,7 @@
 				A7814C8721D8158200FB6E4C /* Territorial-Bridging-Header.h */,
 				A78B961221D5233D0078D1C9 /* AppDelegate.swift */,
 				A78B965F21D55BAE0078D1C9 /* StyleGuide.swift */,
-				A78B964C21D538510078D1C9 /* Geofence Tracking */,
+				A78B964C21D538510078D1C9 /* Geofencing */,
 				A79BBDC421D7B5BA001DAE9D /* Prompts */,
 				A7C1138721D87C4A00A29D6D /* Resources */,
 				A76418E121D64C8A00A553F5 /* ViewControllers */,
@@ -261,7 +265,7 @@
 			path = TerritorialUITests;
 			sourceTree = "<group>";
 		};
-		A78B964C21D538510078D1C9 /* Geofence Tracking */ = {
+		A78B964C21D538510078D1C9 /* Geofencing */ = {
 			isa = PBXGroup;
 			children = (
 				A7814C9621D85F6500FB6E4C /* Classes */,
@@ -269,16 +273,18 @@
 				A7814C9521D85F2E00FB6E4C /* Protocols */,
 				A7814C9721D85F7800FB6E4C /* Util */,
 			);
-			path = "Geofence Tracking";
+			path = Geofencing;
 			sourceTree = "<group>";
 		};
 		A78B966121D566EC0078D1C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7C1138D21D9976A00A29D6D /* TrackingView.swift */,
 				A76418EA21D6875E00A553F5 /* GeofencePropertySheet.swift */,
 				A78B966421D577650078D1C9 /* HeroButton.swift */,
 				A76418EC21D68E7500A553F5 /* InputField.swift */,
 				A78B966221D566FB0078D1C9 /* PromptView.swift */,
+				A7C1138B21D92B9700A29D6D /* SmallRoundedButton.swift */,
 				A7814C8D21D824EE00FB6E4C /* WiFiOverlayButton.swift */,
 			);
 			path = Views;
@@ -464,6 +470,8 @@
 				A78B961321D5233D0078D1C9 /* AppDelegate.swift in Sources */,
 				A7814C8E21D824EE00FB6E4C /* WiFiOverlayButton.swift in Sources */,
 				A78B966521D577650078D1C9 /* HeroButton.swift in Sources */,
+				A7C1138E21D9976B00A29D6D /* TrackingView.swift in Sources */,
+				A7C1138C21D92B9700A29D6D /* SmallRoundedButton.swift in Sources */,
 				A7814C8C21D8230F00FB6E4C /* SSIDFieldController.swift in Sources */,
 				A78B964B21D537530078D1C9 /* AuthorizationManager.swift in Sources */,
 				A76418DE21D6430F00A553F5 /* CLLocationCoordinate2D+Utils.swift in Sources */,
@@ -482,7 +490,7 @@
 				A76418DC21D641BD00A553F5 /* Geofence.swift in Sources */,
 				A78B966021D55BAE0078D1C9 /* StyleGuide.swift in Sources */,
 				A79BBDE321D7C772001DAE9D /* EmptyStatePrompt.swift in Sources */,
-				A78B965821D53F180078D1C9 /* GeofenceTrackerViewController.swift in Sources */,
+				A78B965821D53F180078D1C9 /* TrackingViewController.swift in Sources */,
 				A7814C9421D85A4500FB6E4C /* LocationTracker.swift in Sources */,
 				A79BBDC821D7B6AA001DAE9D /* PromptViewController.swift in Sources */,
 				A76418E721D6706500A553F5 /* GeofenceEditorViewController.swift in Sources */,

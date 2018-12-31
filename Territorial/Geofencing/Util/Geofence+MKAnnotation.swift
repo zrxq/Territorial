@@ -10,7 +10,7 @@ import MapKit
 
 class GeofenceAnnotation: NSObject, MKAnnotation {
     
-    var coordinate: CLLocationCoordinate2D {
+    @objc dynamic var coordinate: CLLocationCoordinate2D {
         didSet {
             onAreaChanged?(self)
         }

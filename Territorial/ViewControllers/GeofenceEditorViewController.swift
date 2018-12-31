@@ -39,11 +39,11 @@ final class GeofenceEditorViewController: UIViewController {
         
         mapView.delegate = self
         mapView.frame = view.frame
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.showsUserLocation = true
         mapView.region = MKCoordinateRegion(center: geofence.coordinate, latitudinalMeters: geofence.radius * zoom, longitudinalMeters: geofence.radius * zoom)
         mapView.addAnnotation(geofence)
         mapView.addOverlay(radiusOverlay)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
         
         self.geofence.onAreaChanged = { [unowned self] _ in
             self.updateOverlayAndPlacemark()
@@ -56,17 +56,38 @@ final class GeofenceEditorViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("Geofence Area", comment: "Geofence editor view controller title.")
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(done))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(done))
+
+        let trackingButton = MKUserTrackingBarButtonItem(mapView: mapView)
+        navigationItem.rightBarButtonItem = trackingButton
         
         mapView.register(MKPinAnnotationView.self, forAnnotationViewWithReuseIdentifier: GeofenceEditorViewController.pinViewReuseIdentifier)
 
         propertyEditor.delegate = self
         install(propertyEditor)
+        
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: propertyEditor.view.bottomAnchor),
+            mapView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            mapView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(moveCenter))
+        mapView.addGestureRecognizer(longPressRecognizer)
+        
     }
     
     @objc func done() {
         geofence.ssid = propertyEditor.ssid ?? ""
         delegate?.geofenceEditor(self, didEndEditingGeofence: geofence.geofence())
+    }
+    
+    @objc func moveCenter(reco: UILongPressGestureRecognizer) {
+        let location = reco.location(in: mapView)
+        let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+        geofence.coordinate = coordinate
     }
     
     required init?(coder aDecoder: NSCoder) {

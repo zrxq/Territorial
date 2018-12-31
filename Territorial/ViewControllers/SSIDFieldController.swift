@@ -55,8 +55,21 @@ class SSIDFieldController: UIViewController {
     }
     
     @objc func autofillSSID() {
-        value = SystemWirelessMonitor.ssid
-        onChange?(value)
+        guard let ssid = SystemWirelessMonitor.ssid else {
+            return
+        }
+        let confirmation = UIAlertController(title: NSLocalizedString("Replace with \"\(ssid)\"?", comment: "WiFi autofill confirmation dialog title"), message: nil, preferredStyle: .alert)
+
+        confirmation.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: "WiFi autofill confirmation dialog confirmation button title"), style: .default, handler: { _ in
+            self.value = ssid
+            self.onChange?(self.value)
+        }))
+        
+        confirmation.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "WiFi autofill confirmation dialog cancel button title"), style: .cancel, handler: nil))
+        
+        confirmation.view.tintColor = .black
+        
+        present(confirmation, animated: true)
     }
 }
 

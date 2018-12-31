@@ -66,7 +66,7 @@ final class GeofenceTracker {
     private var geofence: Geofence!
     
     func startTracking(_ geofence: Geofence) {
-        assert(state == .stopped)
+        guard state == .stopped else { return }
         self.geofence = geofence
         state = .pendingWireless
         wireless.startMonitoring()
@@ -129,10 +129,15 @@ final class GeofenceTracker {
     }
     
     func stopTracking() {
+        guard state != .stopped else { return }
         locationTracker.stopTracking()
         wireless.stopMonitoring()
         state = .stopped
         geofence = nil
+    }
+    
+    deinit {
+        stopTracking()
     }
 }
 

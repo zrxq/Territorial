@@ -15,6 +15,7 @@ extension UIColor {
     static let fieldLabel = UIColor(white: 0.7, alpha: 1)
     static let fieldBackground = UIColor(white: 57 / 255, alpha: 1)
     static let active = UIColor(red: 0, green: 208 / 255, blue: 162 / 255, alpha: 1)
+    static let trackerBackgroundWhenInside = UIColor(red: 0, green: 180 / 255, blue: 140 / 255, alpha: 1)
 }
 
 extension UIEdgeInsets {
@@ -28,4 +29,6 @@ extension UIFont {
     static let heroButton = UIFont.systemFont(ofSize: 19, weight: .semibold)
     static let formLabel = UIFont.systemFont(ofSize: 15)
     static let formField = UIFont.systemFont(ofSize: 17)
+    static let result = UIFont.systemFont(ofSize: 48, weight: .medium)
+    static let smallRoundedButton = UIFont.systemFont(ofSize: 14)
 }

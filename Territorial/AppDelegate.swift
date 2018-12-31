@@ -20,17 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let authManager: AuthorizationManager
-        let geofenceStore: GeofenceStore
+        let store: GeofenceStore
+        let tracker: LocationTracker
+        let wireless: WirelessMonitor
         
         if CommandLine.arguments.contains("--uitest") {
             authManager = ScriptedGeofenceManager()
-            geofenceStore = MockGeofenceStore()
+            store = MockGeofenceStore()
+            tracker = MockLocationTracker()
+            wireless = MockWirelessMonitor()
         } else {
-            authManager = CoreLocationTracker()
-            geofenceStore = DefaultsGeofenceStore()
+            let coreLocationTracker = CoreLocationTracker()
+            tracker = coreLocationTracker
+            authManager = coreLocationTracker
+            wireless = SystemWirelessMonitor()
+            store = DefaultsGeofenceStore()
         }
         
-        let coordinator = CoordinatorViewController(authManager, store: geofenceStore)
+        let coordinator = CoordinatorViewController(authManager, tracker: tracker, wireless: wireless, store: store)
         
         window = UIWindow()
         window?.tintColor = .active

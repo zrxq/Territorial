@@ -22,6 +22,7 @@ class CoreLocationTracker: NSObject, AuthorizationManager {
     
     private let locationManager = CLLocationManager()
     private var lastLoc: CLLocation?
+    private var isTracking = false
     
     var geofence: Geofence?
     
@@ -63,17 +64,31 @@ extension CoreLocationTracker: CLLocationManagerDelegate {
         delegate?.locationTracker(self, didUpdateLocation: loc)
     }
     
+    static let retryInterval = TimeInterval(0.25)
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        fatalError("Error: \(error)")
+        // TODO: This is, obviously, not a proper way to handle errors. Additional research needed.
+        NSLog("Location update failure: \(error)")
+        
+        manager.stopUpdatingLocation()
+        // TODO: exponential backoff, maybe?
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + CoreLocationTracker.retryInterval) {
+            if (self.isTracking) {
+                manager.startUpdatingLocation()
+            } else {
+                manager.requestLocation()
+            }
+        }
     }
 }
 
 extension CoreLocationTracker: LocationTracker {
     func startTracking(_ geofence: Geofence) {
+        isTracking = true
         locationManager.startUpdatingLocation()
     }
     
     func stopTracking() {
+        isTracking = false
         locationManager.stopUpdatingLocation()
     }
 }
