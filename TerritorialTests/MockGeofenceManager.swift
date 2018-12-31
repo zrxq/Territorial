@@ -22,7 +22,7 @@ class MockGeofenceManager: NSObject, AuthorizationManager {
     
     var authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet {
-            authorizationDelegate?.geofenceManager(self, didChangeAuthorizationStatus: authorizationStatus)
+            authorizationDelegate?.authorizationManager(self, didChangeStatus: authorizationStatus)
         }
     }
     

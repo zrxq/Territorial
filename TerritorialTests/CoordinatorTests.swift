@@ -13,10 +13,12 @@ import XCTest
 
 class CoordinatorTests: XCTestCase {
     
-    let geofence = MockGeofenceManager()
+    let auth = MockGeofenceManager()
+    let tracker = MockLocationTracker()
+    let wireless = MockWirelessMonitor()
     let store = MockGeofenceStore()
-    lazy var coordinator = CoordinatorViewController(geofence, store: store)
-
+    
+    lazy var coordinator = CoordinatorViewController(auth, tracker: tracker, wireless: wireless, store: store)
     func `is`<T>(instance: Any, of kind: T.Type) -> Bool{
         return instance is T;
     }
@@ -32,29 +34,29 @@ class CoordinatorTests: XCTestCase {
     func testLocationAccessStates() {
         // initial state (not yet authorized)
 
-        XCTAssertEqual(coordinator.state, .locationNeedsAuth)
+        XCTAssertEqual(coordinator.state, .needsAuthorization)
         _ = coordinator.view // force load view
         XCTAssert(prompt(is: LocationAccessPrompt.self))
         
         // authorization denied
         
-        geofence.authorizationStatus = .denied
+        auth.authorizationStatus = .denied
         XCTAssertEqual(coordinator.state, .locationRestricted)
         XCTAssert(prompt(is: LocationRestrictedPrompt.self))
         
         // device/os restrictions
         
-        geofence.authorizationStatus = .restricted
+        auth.authorizationStatus = .restricted
         XCTAssertEqual(coordinator.state, .locationRestricted)
         XCTAssert(prompt(is: LocationRestrictedPrompt.self))
 
         // access granted
         
-        geofence.authorizationStatus = .authorizedAlways
+        auth.authorizationStatus = .authorizedAlways
         XCTAssertEqual(coordinator.state, .needsConfiguring)
         XCTAssert(prompt(is: EmptyStatePrompt.self))
 
-        geofence.authorizationStatus = .authorizedWhenInUse
+        auth.authorizationStatus = .authorizedWhenInUse
         XCTAssertEqual(coordinator.state, .needsConfiguring)
         XCTAssert(prompt(is: EmptyStatePrompt.self))
 
