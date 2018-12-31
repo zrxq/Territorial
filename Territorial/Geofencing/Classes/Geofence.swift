@@ -19,9 +19,18 @@ struct Geofence: Codable, CustomDebugStringConvertible, Equatable {
         self.ssid = ssid
     }
     
-    func contains(_ location: CLLocation) -> Bool {
+    func distance(from location: CLLocation) -> CLLocationDistance {
         let centerLocation = CLLocation(latitude: center.latitude, longitude: center.longitude)
-        return location.distance(from: centerLocation) <= radius
+        return location.distance(from: centerLocation)
+
+    }
+    
+    func contains(_ location: CLLocation) -> Bool {
+        return distance(from: location) <= radius
+    }
+    
+    func distanceFromThreshold(to location: CLLocation) -> CLLocationDistance {
+        return abs(distance(from: location) - radius)
     }
     
     private static let radiusFormatter: LengthFormatter = {

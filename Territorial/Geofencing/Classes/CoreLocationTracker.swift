@@ -21,12 +21,16 @@ class CoreLocationTracker: NSObject, AuthorizationManager {
     }
     
     private let locationManager = CLLocationManager()
-    private var lastLoc: CLLocation?
+    private let accuracyPolicy: AccuracyPolity
+    
+    private var latestLocation: CLLocation?
     private var isTracking = false
+    
     
     var geofence: Geofence?
     
-    override init() {
+    init(accuracyPolicy: AccuracyPolity = FairlyGreedyAccuracyPolicy()) {
+        self.accuracyPolicy = accuracyPolicy
         super.init()
         locationManager.delegate = self
     }
@@ -37,7 +41,7 @@ class CoreLocationTracker: NSObject, AuthorizationManager {
     
     func defaultGeofence() -> Geofence {
         let loc: CLLocation
-        if let lastLoc = lastLoc {
+        if let lastLoc = latestLocation {
             loc = lastLoc
         } else {
             // actual location not yet available, make up one
@@ -59,9 +63,14 @@ extension CoreLocationTracker: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let loc = locations.last else { return }
-        lastLoc = loc
-        delegate?.locationTracker(self, didUpdateLocation: loc)
+        guard let location = locations.last else { return }
+        latestLocation = location
+        if let geofence = geofence, let latestLocation = latestLocation {
+            let (accuracy, distanceFilter) = accuracyPolicy.updateAccuracy(using: geofence, latestLocation: latestLocation)
+            locationManager.desiredAccuracy = accuracy
+            locationManager.distanceFilter = distanceFilter
+        }
+        delegate?.locationTracker(self, didUpdateLocation: location)
     }
     
     static let retryInterval = TimeInterval(0.25)
@@ -84,11 +93,13 @@ extension CoreLocationTracker: CLLocationManagerDelegate {
 extension CoreLocationTracker: LocationTracker {
     func startTracking(_ geofence: Geofence) {
         isTracking = true
+        self.geofence = geofence
         locationManager.startUpdatingLocation()
     }
     
     func stopTracking() {
         isTracking = false
+        geofence = nil
         locationManager.stopUpdatingLocation()
     }
 }
